@@ -1,0 +1,172 @@
+body {
+    font-family: 'Commissioner', sans-serif;
+    margin: 0;
+}
+
+nav, body > section {
+    overflow: auto;
+}
+
+body > section {
+    min-height: 100vh;
+}
+
+#about {
+    min-height: 90vh;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f1f1f4;
+}
+
+nav > h1 {
+    display: flex;
+    align-self: center;
+    padding: 1em 3em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 900;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul a {
+    padding: 1em 3em;
+}
+
+nav li {
+    display: flex;
+    align-items: center;
+}
+
+#banner {
+    display: flex;
+    background-image: url(./images/two-dice.png);
+    background-position: center right;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    background-color: #f1f1f4;
+}
+
+#banner h2, #banner p {
+    color: #000000;
+}
+
+#banner h2 {
+    margin: 2rem 0 1rem 0;
+}
+
+#banner p {
+    padding: 1rem;
+    background-color: #FCAF3B;
+}
+
+#banner > header {
+    position: relative;
+    right: 240px;
+    top: 80px;
+}
+
+#random-number-generator {
+    background-image: url(./images/mountain.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+#random-number-generator, #display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#random-number-generator #form {
+    padding: 2em 4em;
+    border-radius: 0.5em;
+    background-color: rgb(241, 241, 244, 0.7);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.30);
+}
+
+#random-number-generator fieldset {
+    border: none;
+}
+
+#random-number-generator label {
+    display: flex;
+    padding: 1em 0;
+}
+
+#random-number-generator input {
+    width: 200px;
+    padding: 0.5em 1em;
+}
+
+form button {
+    font-family: 'Commissioner', sans-serif;
+    font-weight: lighter;
+    width: auto;
+    font-size: 1em;
+    margin: 2em 0 2em 145px;
+    padding: 0.5em 1em;
+    background-color: #FCAF3B;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.30);
+}
+
+form button:hover {
+    background-color: #FFA31A;
+}
+
+form button:active {
+    background-color: #FFA31A;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.50);
+    transform: translateY(1px);
+  }
+
+#display{
+    font-size: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 1em;
+    margin: 1em;
+    background-color: #eee;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.30);
+}
+
+.card img {
+    width: 100%;
+}
+
+#about ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#about h2 {
+    padding: 1em 3em;
+}
+
+footer {
+    padding: 1em;
+}
