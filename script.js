@@ -4,8 +4,8 @@ AOS.init();
 // Selects elements in index.html
 const display = document.querySelector('#display')
 const generateButton = document.querySelector("#generate")
-const minimumInput = document.querySelector('#minimum')
-const maximumInput = document.querySelector('#maximum')
+const minimumInput = document.querySelector('#prepassword')
+const maximumInput = document.querySelector('#password')
 
 /**
  * Creates a random number in the given range
