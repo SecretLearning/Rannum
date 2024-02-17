@@ -10,6 +10,12 @@ function generatePassword() {
 
     // Store value of minimumInput and maximumInput into variables and converts them into integer
     const prepassword = parseInt(prepasswordinput.value)
+
+    // Check if the input is within the desired range
+    if (prepassword < 100000 || prepassword > 999999) {
+        display.innerHTML = 'Invalid';
+        return;
+    }
     
     let numberStr = prepassword.toString();
     let digitArray = numberStr.split('').map(Number);
