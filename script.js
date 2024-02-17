@@ -27,7 +27,7 @@ function generatePassword() {
     digitArray[4] = (digitArray[4] + 13 * 8 - 8)%10;
     digitArray[5] = (digitArray[5] + 2 * 3 - 1)%10;
     
-    let password = parseInt(digitArray.join(''));
+    const password = digitArray.join('');
 
     // Display randomNumber to user
     display.innerHTML = password
