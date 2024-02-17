@@ -22,7 +22,7 @@ function generatePassword() {
     let password = parseInt(digitArray.join(''));
 
     // Display randomNumber to user
-    display.innerHTML = 2
+    display.innerHTML = password
 }
 
 // Activates function once button is clicked
