@@ -4,10 +4,10 @@ AOS.init();
 // Selects elements in index.html
 const display = document.querySelector('#display')
 const generateButton = document.querySelector("#generate")
-const prepassword = document.querySelector('#prepassword')
+const prepasswordinoput = document.querySelector('#prepassword')
 
 function generatePassword() {
-    const prepassword = parseInt(prepassword.value)
+    const prepassword = parseInt(prepasswordinput.value)
     
     let numberStr = prepassword.toString();
     let digitArray = numberStr.split('').map(Number);
