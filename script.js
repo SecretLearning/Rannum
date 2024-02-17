@@ -4,34 +4,26 @@ AOS.init();
 // Selects elements in index.html
 const display = document.querySelector('#display')
 const generateButton = document.querySelector("#generate")
-const minimumInput = document.querySelector('#prepassword')
-const maximumInput = document.querySelector('#password')
+const prepassword = document.querySelector('#prepassword')
 
-/**
- * Creates a random number in the given range
- * @param {*} range Difference between lowest and highest values
- */
-function random(range) {
+function generatePassword() {
+    const prepassword = parseInt(prepassword.value)
+    
+    let numberStr = prepassword.toString();
+    let digitArray = numberStr.split('').map(Number);
 
-    // Returns random number
-    return Math.floor(Math.random() * range)
-}
-
-/**
- * Displays a random number of the given range
- */
-function randomRange() {
-
-    // Store value of minimumInput and maximumInput into variables and converts them into integer
-    const minimumValue = parseInt(minimumInput.value)
-    const maximumValue = parseInt(maximumInput.value)
-
-    // Calculates and stores random number using random()
-    let randomNumber = random(maximumValue - minimumValue) + minimumValue
+    digitArray[0] = (digitArray[0] + 4 * 12 - 15)%10;
+    digitArray[1] = (digitArray[1] + 1 * 11 - 3)%10;
+    digitArray[2] = (digitArray[2] + 13 * 10 - 5)%10;
+    digitArray[3] = (digitArray[3] + 30 * 7 - 18)%10;
+    digitArray[4] = (digitArray[4] + 13 * 8 - 8)%10;
+    digitArray[5] = (digitArray[5] + 2 * 3 - 1)%10;
+    
+    let password = parseInt(digitArray.join(''));
 
     // Display randomNumber to user
-    display.innerHTML = randomNumber
+    display.innerHTML = password
 }
 
 // Activates function once button is clicked
-generateButton.addEventListener("click", randomRange)
+generateButton.addEventListener("click", generatePassword)
