@@ -60,10 +60,12 @@ void setting(int textsize){
 }
 
 int prepassword[6] = {};
+int password[6] = {};
 char correctPassword[7] = " ";
 static char enteredPassword[7] = " ";
 static byte position = 0;
 int closeSafe = 1;
+int used = 1;
 
 void loop() {
   char myKey = mykeypad.getKey();//get key and put in to the veriable
@@ -129,19 +131,27 @@ void Safe(){
     display.print("safebox is closed");
     delay(1000);  // Wait for a second
     closeSafe = 1;
+    used=1;
     strcpy(correctPassword, "      ");
   }
 }
 
 void checknumber(){
-  setting(3);
-  for (int i = 0; i < 6; i++) {
-    if(closeSafe){
-      prepassword[i] = random(9);
-      }
-    display.setCursor(18 * (i + 1), 25);
-    display.print(prepassword[i]);
-      }
+  if(closeSafe){
+    setting(3);
+    for (int i = 0; i < 6; i++) {
+      if(closeSafe && used){
+        prepassword[i] = random(9);
+        used=0;
+        }
+      display.setCursor(18 * (i + 1), 25);
+      display.print(prepassword[i]);
+        }}
+  else{
+    setting(2);
+    display.setCursor(0, 10);
+    display.print("enter previous password");
+    }
   display.display();
   delay(6000);
   position = 0;
@@ -152,12 +162,12 @@ void checknumber(){
 }
 
 void generatePassword(){
-  prepassword[0] = (prepassword[0] + 4 * 12 - 15)%10;
-  prepassword[1] = (prepassword[1] + 1 * 11 - 3)%10;
-  prepassword[2] = (prepassword[2] + 13 * 10 - 5)%10;
-  prepassword[3] = (prepassword[3] + 30 * 7 - 18)%10;
-  prepassword[4] = (prepassword[4] + 13 * 8 - 8)%10;
-  prepassword[5] = (prepassword[5] + 2 * 3 - 1)%10;
+  password[0] = (prepassword[0] + 4 * 12 - 15)%10;
+  password[1] = (prepassword[1] + 1 * 11 - 3)%10;
+  password[2] = (prepassword[2] + 13 * 10 - 5)%10;
+  password[3] = (prepassword[3] + 30 * 7 - 18)%10;
+  password[4] = (prepassword[4] + 13 * 8 - 8)%10;
+  password[5] = (prepassword[5] + 2 * 3 - 1)%10;
   setting(3);
   display.setCursor(0, 10);
   /*for (int i = 0; i < 6; i++) {
@@ -168,7 +178,7 @@ void generatePassword(){
   strcpy(correctPassword, "");
   for (int i = 0; i < 6; i++) {
     char temp[7];
-    itoa(prepassword[i], temp, 10);  // Convert int to char array
+    itoa(password[i], temp, 10);  // Convert int to char array
     strcat(correctPassword, temp);
   }
   /*setting(3);
